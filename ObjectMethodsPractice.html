@@ -1,0 +1,92 @@
+<html>
+    <head>
+       
+    </head>
+    <body>
+      
+      <script>
+        //first object declaration;
+        obj1={
+         prop:"array10",p11:"array10",p12:"array12"
+       };
+       //define properties and property
+       //by using this methods we add new values in object.
+         Object.defineProperties(obj1,{pros:{value:"arrays copy"},
+                                        pros1:{value:"copy2"},
+                                        pros2:{value:"copy2"}});
+        Object.defineProperty(obj1,'props',{value:'copy4'});
+
+        //method getownpropetynames.
+         document.write(Object.getOwnPropertyNames(obj1)," line 20 <br>");
+         //method getownpropertydesciptor
+         document.write(Object.getOwnPropertyDescriptor(obj1,'props').value," line 22<br>");
+         //mehod getown property desciptors
+         var descriptors=Object.getOwnPropertyDescriptors(obj1)
+         document.write(descriptors.props.value,"<br>");
+         document.write(descriptors.pros.value,"<br>");;
+         document.write(Object.values(obj1),"<br>");
+         //creating two objects.
+         /* differance between object creating with assign method and create method
+         assain method:- shaollow copy of main object. changes in obj2 are  changed in obj1 also
+         create method:-deep copy of obj1 . changes in obj1 occurs in obj3 but changes in obj3 not allowed to changes in obj1
+
+         */
+         obj2=Object.assign(obj1);
+       obj3=Object.create(obj1);
+       
+       document.write(Object.getPrototypeOf(obj2)==obj1,"<br>");//false
+       document.write(Object.getPrototypeOf(obj1)==obj3,"<br>");//false
+       document.write(Object.getPrototypeOf(obj3)==obj2,"<br>");//true
+       document.write(Object.getPrototypeOf(obj3)==obj1,"<br>");//true
+    //setPrototypeof method
+       var obj4=new Object;
+       Object.setPrototypeOf(obj1,obj4);
+       document.write(Object.values(obj4)," line44 <br>");
+       var e=Object.getOwnPropertyDescriptor(obj4,'props')
+       document.write(e," line 46 <br>")
+       //is method
+       document.write(Object.is(obj1.pros1,obj1.pros2),"  line 48 <br>");//true
+       document.write(Object.is(obj1.pros1,obj2.pros1),"  line 49 <br>");//true
+       document.write(Object.is(obj1.pros1,obj3.pros1),"  line 50 <br>");//true
+       document.write(Object.is(obj2.pros1,obj1.pros1),"  line 51 <br>");//true
+
+/* is method use to compare values b/w objects or same object. */
+
+       document.write(obj1.prop,"<br>");
+       document.write(obj2.prop,"<br>");
+       document.write(obj3.prop)
+          </script>
+       </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--
+       
+      -->
+</html>

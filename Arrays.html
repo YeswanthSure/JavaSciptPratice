@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+       <script>
+        var arr1=[2,3,4,5];
+        var arr2=new Array();
+        arr2[0]="v4";
+        arr2[1]="v5";
+        arr2[2]="v6";
+        var arr3=new Array("v7","v8","v9");
+
+        //concat method in array
+        document.write(arr1.concat(arr2,arr3)," line 15 in code <br> ");
+
+        //coptWithin
+       // document.write(arr1.copyWithin(0,1,3)," line 18 in code <br> ");//0 is target, 1 is start copy, 2 end. value b/w 1 and 2 is coped at target.
+       /// document.write(arr2.copyWithin(1,2)," line 19 in code <br> ");//1 is target ,2 is start,no end
+       // document.write(arr3.copyWithin(2)," line 19 in code <br> ");//2 is target ,0 is start
+
+        //entries method
+        var lit =arr1.entries();
+        for(var e of lit)
+        {
+            document.writeln(e,"<br>");
+        }
+
+        //flat method
+       arr1= arr1.flat();
+
+      //flatmap
+      document.write(arr1.flatMap((E,index)=>[E+2,arr3[index]]),"  <br>");
+        //every method.
+        function test(value,index,arr1){
+            document.write(value,"  <br>");
+            return value<10
+        }
+        document.write(arr1.every(test ));
+       
+        //fill method
+       // document.write(arr1.fill("12"),"<br>");
+        
+        //form:-converts objects into string
+        var arr4="converts objects into string";
+        var arr5=Array.from(arr4);
+        document.write(arr5,"<br>");
+        document.write(arr4,"<br>");
+
+        //filter()
+        document.write(arr1.filter((e=>e>0)),"  <br>");
+
+        //find
+        document.write(arr1.find((e=>e>0)),"  <br>");
+        document.write(arr1.findIndex((e=>e>0)),"  <br>");
+
+        //includes
+        document.write(arr1.includes(0),"  <br>");
+        //isArray
+        document.write(Array.isArray(arr1),"<br>");
+        //join
+        document.write(arr1.join("-"),"<br>");
+//splice
+        arr1.splice(0,0,1);
+        document.write(arr1,"<br>");
+            //tostring
+        document.write(arr1.toString(),"<br>");
+        //unshift
+        arr1.unshift(0);
+        document.write(arr1,"<br>");
+
+       //document.write(Array.toString(arr5));
+       </script>
+    </body>
+</html>

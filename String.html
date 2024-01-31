@@ -25,6 +25,37 @@
            document.write(s1.search("@"),":- search method <br>");
            //match():- return first occurance of match element.
            document.write(s1.match("[1-9]"));
+            
+           //subStr(start,length)
+           
+           document.write(s1.substr(1,6),"<br>");
+
+           //substring(start index , end index)
+           /*differance b/w the substr and substring is substring.
+           substr:-working on length
+           where as substring works on indexes
+*/
+           document.write(s1.substring(1,6),"<br>");
+
+           //slice;-if we gave a negative number it prints fom back side onwards thatmake it different from substring method
+           document.write(s1.slice(-5),"<br>");
+
+           //toUpperCase
+           document.write(s2.toUpperCase(),"<br>");
+
+           //tolowerCase
+           document.write(s2.toLowerCase(),"<br>");
+
+           //date
+           var date= new Date();
+           document.write(date.toDateString(),"<br>");
+           document.write(date.toTimeString(),"<br>");
+
+
+           var int =new Number(16) ;
+           document.write(Math.pow(int,2),"<br>");
+           document.write(Math.sqrt(int,2),"<br>");
+
            
 
         </script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p id="id1" ></p>
+        <button id="id2" onclick="msg()">stop setTimeout</button>
+        <button onclick="start()">start setTimeout</button>
+        <button onclick="his()" >history</button>
+        <script>
+            var e=setInterval(time,1000);
+        
+            function  time(){
+                var d= new Date();
+                document.getElementById("id1").innerHTML=d.toLocaleTimeString();
+           }
+            start=()=>{
+            e=setInterval(time,1000);
+                }
+           function msg(){
+          document.getElementById("id2").innerHTML= clearInterval(e);
+           }
+
+             //  var e=window.prompt("enter your name");
+          //  var s=window.confirm("are you sure  about given name "+e);
+           // window.alert("hi "+e)
+           // document.write(window.setInterval("hey",2000));
+            // window.setTimeout(() => {
+            //     open("https://mail.google.com");
+            // },5000);
+
+            
+
+        </script>
+        
+    </body>
+</html>

@@ -6,6 +6,7 @@
     <body>
         <script>
            var emp=class{
+               //method, constructor, static method only we can use in class , but not functions
                 constructor(id,name,age){
                 this.id=id;
                 this.name=name;
@@ -18,6 +19,19 @@
 emp.prototype.m1=function(){
        return this.id+" : "+this.name+":"+this.age;
    }
+            /*
+            //prototype is possible for class to function and function to function.
+//Function to Function
+            m1=function(age){
+    this.age=age;
+   }
+   m1.prototype.m2=function(){
+                
+    return this.id+" : "+this.name+":"+this.age;
+   
+            }
+            var e2=new m1(12);
+            */
 var e1=new emp(101,"yash",21);
 var e2=new emp(102,"yeswanth",33);
 

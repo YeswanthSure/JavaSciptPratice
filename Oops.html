@@ -11,12 +11,21 @@
                 this.id=id;
                 this.name=name;
                 }
+                static m1(){
+                return 10;
+                }
+                static m2(){//static to static we can call through this keyword
+                    return this.m1();
+                }
+                m3(){//static to non static we can call through class name
+                    return emp.m1();
+                }
             }
             emp.prototype.m2=function(age){
                 this.age=age;
             }
 //prototype
-emp.prototype.m1=function(){
+emp.prototype.m4=function(){
        return this.id+" : "+this.name+":"+this.age;
    }
             /*
@@ -35,7 +44,8 @@ emp.prototype.m1=function(){
 var e1=new emp(101,"yash",21);
 var e2=new emp(102,"yeswanth",33);
 
-document.write(e2.m1());
+            document.write(emp.m2()+" "+e1.m3()+ " "+e2.m4());
+
         </script>
     </body>
 </html>

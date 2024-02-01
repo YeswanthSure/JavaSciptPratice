@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+           var emp=class{
+                constructor(id,name,age){
+                this.id=id;
+                this.name=name;
+                }
+            }
+            emp.prototype.m2=function(age){
+                this.age=age;
+            }
+//prototype
+emp.prototype.m1=function(){
+       return this.id+" : "+this.name+":"+this.age;
+   }
+var e1=new emp(101,"yash",21);
+var e2=new emp(102,"yeswanth",33);
+
+document.write(e2.m1());
+        </script>
+    </body>
+</html>

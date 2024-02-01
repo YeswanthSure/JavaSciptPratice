@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <fieldset style="width: 300px; margin-left: 500px;" >
+        <legend style="position:relative;">Register</legend>
+        <input type="text" id="id1" name="Fname"/>:FirstName<br>
+        <input type="text" id="id3" name="Lname"/>:LastName<br>
+        <input type="number"  name="mobile"/>:mobile<br>
+        <input type="text" name="gmail"/>:gmail<br>
+        <input type="password"  name="password"/>:password<br>
+        <input type="password" id="id2" name="cPassword"/>:confirmPassword<br>
+        Gender:
+        <input type="radio" value="Male" name="gender"/>:Male
+        <input type="radio" value="Female" name="gender"/>:Female<br>
+    </fieldset>
+    <div onclick="msg()" ><button>click</button></div>
+
+    <script>
+       
+              function msg(){
+                var  name=document.getElementById("id1").value;
+                var Lname=document.getElementById("id3").value;
+                 var password=document.getElementById("id2").value;
+                 var genders =document.getElementsByName("gender");
+                 for(i=0;i<genders.length;i++){
+                    if(genders[i].checked){
+                       var gen=genders[i].value
+                 }
+                 }
+                // genders.forEach(i => {
+                    
+                // }); 
+                 //document.getElementById("id4").innerHTML="gender :"+genders
+                document.write(name,",", Lname," ",gen);
+
+               }
+       
+        
+    </script>
+    </body>
+</html>

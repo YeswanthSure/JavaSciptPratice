@@ -1,0 +1,39 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+</head>  
+<body>  
+    <input type="text" id="id1" name="name">Id
+    <input type="text" id="id2" name="name">name
+
+    <button onclick="setCookie()">setCookie</button>
+    <button onclick="getCookie()">getCookie</button>
+    <button onclick="deleteCookie()">deleteCookie</button>
+       <script>
+        var obj={};
+        obj.id=document.getElementById("id1").value;
+        obj.name=document.getElementById("id2").value;
+
+        var x=JSON.stringify(obj);
+       
+        setCookie=()=>{
+            document.cookie="name ="+x;
+            alert(document.cookie);
+        }
+        getCookie=()=>{
+            alert(document.cookie);
+        }
+        deleteCookie=()=>{
+            if(document.cookie.length!=0){
+                document.cookie=x+";max-age=0";
+                 x=document.cookie;
+                 alert(document.cookie);
+            }
+                
+            
+        }
+
+
+       </script> 
+</body>  
+</html> 

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            
+            var companyName=class Cmp{
+                constructor(){
+                    //Creating Abstraction.
+                    //check if the constructor of the current instance matches the constructor of the class
+                    //if match attemp to made instance to abstract class directly
+                    if(this.constructor === Cmp){
+                         throw new Error("object cant be created with abstract class");
+                        }
+                }
+
+                salary(){
+                    throw new Error("can't call abstract method");
+                }
+            }
+
+           var emp=class Emp extends companyName{
+                constructor(id,name,age){
+                    super();
+                this.id=id;
+                this.name=name;
+                this.age=age;
+               
+                //declaring with var is private and belongs to class .child doesnot getit.
+                }
+                 SetId(id){
+                    this.id=id
+                }
+                GetId(){
+                   return this.id;
+                }
+                SetName(name){
+                    this.name=name;
+                }
+                setAge(age){
+                    this.age=age;
+                }
+                getName(){
+                    return this.name;
+                }
+               getAge(){
+                return this.age;
+               }
+               getCom(){
+                return this.company;
+               }
+               salary(){
+                return 15000;
+               }
+               
+            }
+
+        var salar =class Sala extends emp{
+            constructor(id,name,age,sal){
+                super(id,name,age);
+                this.sal=sal
+            }
+            GetId(){
+                return this.id=110;
+            }
+            salary(){
+                return 25000;
+            }
+            //modifing parent method in child is not working.
+            
+            toString(){
+                return this.id+" "+this.name+" "+this.age+" "+this.sal+" " ;
+            }
+        }
+
+           //const e2=new companyName(); //trying to create instance for a abstract class. 
+           var e1= new salar(101,"yash",31,25000);
+           var e2=new emp();
+           document.write(e1.toString() +" "+e1.GetId()+" "+e2.salary());
+
+
+           
+
+
+            // var e1=new emp();
+            // e1.SetId(101);
+            // e1.SetName("Rohit");
+            // e1.setAge(35);
+        
+            // e1.GetId();
+            // e1.getName();
+            // e1.getAge();
+            
+        </script>
+    </body>
+</html>

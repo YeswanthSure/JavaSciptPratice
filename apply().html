@@ -1,0 +1,45 @@
+<!DOCTYPE html><html>
+    <head></head>
+    <body>
+        <script>  
+            var lang="Java";  
+              
+            function lang_name(call)  
+            {  
+              
+                call();  
+            };  
+              
+            var obj={  
+                
+              lang:"JavaScript",  
+              language:function()  
+              {  
+                document.writeln(this.lang+ " is a popular programming language. <br>");  
+              }  
+            };  
+            debugger;
+            lang_name(obj.language,"<br>");  
+            lang_name(obj.language.bind(obj),"<br>");  
+            </script>  
+
+            <script>  
+                var emp_address = {  
+                     company :"yash",city:"kavali",state:"Ap,",
+                
+                    fullAddress: function() {  
+                        return this.company + " " + this.city+" "+this.state;  
+                   }    
+                }  
+                var address = {  
+                    company:"Javatpoint",  
+                    city:"Noida",  
+                    state:"UP",  
+                  
+                }  
+               
+                  document.writeln(emp_address.fullAddress.call(emp_address));
+              //  document.writeln(emp_address.fullAddress.call(address));   
+                //document.writeln(emp_address.fullAddress.apply(address));</script>  
+    </body>
+</html>

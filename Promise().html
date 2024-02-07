@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            var p=new Promise((resolve,reject,all)=>{
+                var x=6;
+                if(x<5) resolve("success");
+                else   reject("failed");
+               
+            });
+            p.then((a)=>{
+                document.writeln("operation is "+a);
+            }).catch((a)=>{           
+                    document.writeln("operation is "+a);
+            }).finally((a)=>{           
+                    document.writeln("operation is  end ");
+            })
+
+           var e= eval("10*20*30");
+           document.writeln(e);
+        </script>
+    </body>
+</html>

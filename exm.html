@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+   <body>
+    <h1>introduction</h1>
+    <p id="id1" value="yash" name="name1">hai</p>
+    <div id="id2">yash</div>
+    <div>nesh</div>
+    <span id="id3">prem</span>
+    <script>
+        var i=document.getElementById("id1")
+        document.writeln(i.value);
+        console.log(i.value);
+
+        var o1=i.closest("#div-id2");
+        console.log(o1);
+        
+        //getattribute method in javascipt
+        var s1=i.getAttribute("name");
+        document.writeln(s1);
+        console.log(s1);
+
+        //removing attribute in a html tag
+        var s2=i.removeAttribute("name");
+
+        //checking the attribute in a element that we just remove
+         s1=i.getAttribute("name");
+        document.writeln(s1);
+
+       // document.getElementById("id3").style.display="none";
+        document.getElementById("id3").style.visibility="none";
+
+    </script>
+   </body>
+</html>

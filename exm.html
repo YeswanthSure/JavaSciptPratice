@@ -3,35 +3,88 @@
     <head>
 
     </head>
-   <body>
+   <body style=" background-color: rgb(201, 199, 197) ">
     <h1>introduction</h1>
-    <p id="id1" value="yash" name="name1">hai</p>
-    <div id="id2">yash</div>
-    <div>nesh</div>
+    <input id="id1" value="yash" name="name1" backgounrd>hai</input>
+    <div id="id2" >yash</div>
+    <div id="id5" style="background-color: beige; width: 100px; padding: 10px;">nesh</div>
     <span id="id3">prem</span>
     <script>
         var i=document.getElementById("id1")
-        document.writeln(i.value);
+        document.writeln(i.value," #1 <br> ");
         console.log(i.value);
+        //change attibute using setattribute
+        i.setAttribute("value","krish");
+        document.writeln(i.value," #1 <br> ");
 
         var o1=i.closest("#div-id2");
         console.log(o1);
-        
+
         //getattribute method in javascipt
         var s1=i.getAttribute("name");
-        document.writeln(s1);
-        console.log(s1);
+        document.writeln(s1,"<br>");
+       // console.log(s1);
 
         //removing attribute in a html tag
         var s2=i.removeAttribute("name");
 
         //checking the attribute in a element that we just remove
          s1=i.getAttribute("name");
-        document.writeln(s1);
+        document.writeln(s1,"<br>");
 
-       // document.getElementById("id3").style.display="none";
+        document.getElementById("id3").style.display="none";
         document.getElementById("id3").style.visibility="none";
 
+        function fun(a,b){
+            return a*b;
+        }
+        var v1= fun(2,3);
+        var v2=fun(10,25)
+        document.writeln(v1+" "+ v2,"<br>");
+
+        //split method
+        var s=" welcome to the javascipt concept ";
+        var arr1=s.split(" ");
+        document.write(arr1,"<br>");
+        //typeof used to identify datatype of variable
+        document.write(typeof(v2),"<br>");
+        //includes method
+        document.write(s.includes("to")," -includes <br>");
+        //Trim method
+        document.write(s.trim(),"<br>");
+
+        //reload method
+        function reload1(){
+            location.reload();
+        }
+
+        //background color change
+       var i1= setInterval(bgc,1000);
+        var i=1;
+        function bgc(){
+            var c=document.getElementById("id5");
+            c.style.backgroundColor="red";
+           if(i%2==0){
+            c.style.backgroundColor="rgb(241, 148, 8)";
+            i++
+           }else if(i%3==0){
+            c.style.backgroundColor=" rgb(199, 216, 210)";
+            i++
+           }else if(i%5==0){
+            c.style.backgroundColor=" rgb(7, 248, 164)";
+            i++
+           }else {
+            c.style.backgroundColor=" rgb(148, 7, 230)";
+            i++
+           }
+        }
+        clearInterval1=()=>{
+            clearInterval(i1);
+        }
+
     </script>
+    <button onclick="reload1()">Reload</button>
+    <button onclick="clearInterval1()">claerIntervel</button>
+
    </body>
 </html>

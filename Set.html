@@ -1,0 +1,34 @@
+<!DOCTYPE html><html>
+
+<head>
+
+</head>
+<body>
+    <script>
+        var s=new Set();
+        s.add(10);
+        s.add(11);
+        s.add(12);
+        s.add(13);
+        s.forEach((e)=>{
+            document.write(e,"<br>");
+        })
+        //has method
+        document.write(s.has(13),"<br>");
+        //values
+        var itr=s.values();
+        document.write(itr.next().value,"<br>");
+
+         //delete
+         document.write(s.delete(12),"<br>");
+
+         //keys 
+         document.write(s.keys().next().value,"<br>");
+         //clear
+         document.write(s.clear());
+         s.forEach((e)=>{
+            document.write(e,"<br>");
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head> </head>
+    <body>
+        <script>
+        var mp=new Map();
+        mp.set(101,"yash");
+        mp.set(102,"krishna");
+        mp.set(103,"prem");
+        mp.set(104,"nesh");
+        mp.set(105,"nikki");
+        document.write(mp.get(104),"<br>");
+        //entries
+        var itr=mp.entries();
+        document.write(itr.next().value,"<br>");
+        document.write(itr.next().value,"<br>");
+        document.write(itr.next().value,"<br>");
+        //values
+        var val=mp.values();
+        document.writeln(val.next().value);
+
+        var ke=mp.keys();
+        document.write(ke.next().value,"<br>");
+
+        //has()
+        document.write(mp.has(105));
+
+        var wm= new WeakMap();
+        var obj={};
+        var obj1={101:"yash",102:"kish"}
+        wm.set(obj,"yash");
+        wm.set(obj1);
+       // wm.set(obj,"krish")
+        document.write(wm.get(obj));
+        document.write(wm.get(obj1));
+
+        </script>
+    </body>
+</html>

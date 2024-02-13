@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <style>  
+            #para{  
+            width: 250px;  
+            height: 150px;  
+            overflow: scroll;  
+            border: 1px solid red;  
+            font-size: 25px;  
+            }  
+            </style>  
+        <script>
+            //callback
+            function add(some){
+                var res=5+3;
+                some(res);
+            }
+            // function add(some){
+            //     var res=5+5;
+            //     some(res);
+            // }
+            function mul(some){
+                var res=5*3;
+                some(res);
+            }
+            div=(some)=>{
+                var res=5/3;
+                some(res);
+            }
+            sub=(some)=>{
+                var res=5-3;
+                some(res);
+            }
+            function f2(res){
+                document.write("output "+res+" <br>");
+            }
+            add(f2);
+            sub(f2);
+            div(f2);
+            mul(f2);
+        </script>
+        <script>
+            //closure
+            function f1(){
+                var a=50;
+                f2=()=>{
+                    document.write("output ",a,"<br>");
+                }
+                f2();
+            }
+            f1();
+        </script>
+        <script>
+            var d1=new Date("05/17/2000");
+            var d2=new Date("06/05/2001");
+            f1=(date)=>{
+                document.write(date,"<br>");
+            }
+            f1(d1);
+            f1(d2);
+            var diff=d1.getTime()-d2.getTime();
+            var diff=diff/(1000*60*60*24);
+            document.write("total days differnet "+diff," ",);
+
+        </script>
+        <script>
+            function rediret(){
+                window.Location="https://www.javatpoint.com/";
+            }
+        </script>
+        <script>  
+            function fun() {  
+            document.getElementById("para").style.color = "red";  
+            document.getElementById("para").style.background = "lightgreen";  
+            }  
+            </script>  
+       <p id = "para" onscroll = "fun()"> Hi, Welcome to the javaTpoint.com. This site is
+         developed so that students may learn computer science related technologies easily.
+          The javaTpoint.com is always providing an easy and in-depth tutorial on various 
+          technologies. No one is perfect in this world</p>
+          <a href="javascript:void(0):">it do nothing</a>
+          <a href="javascript:alert('welcome to javascipt')">do something</a>
+    </body>
+</html>
